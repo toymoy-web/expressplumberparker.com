@@ -208,3 +208,10 @@ body{padding-bottom:76px}
 .fab{display:none}
 }
 @media(min-width:901px){.sticky-cta{display:none}.fab{display:flex}}
+
+/* mobile overflow fix: footer columns may shrink, long email/address wraps */
+footer .wrap>div{min-width:0}
+footer .wrap a,footer p,.footbottom{overflow-wrap:anywhere}
+@media(max-width:480px){footer .wrap{grid-template-columns:1fr}}
+/* mobile nav fix: logo row plus one scrollable link row instead of overlapping wrapped links (call bar stays sticky at bottom) */
+@media(max-width:900px){nav .wrap{height:auto;padding-top:8px;padding-bottom:8px}.navlinks{width:100%;flex-wrap:nowrap;overflow-x:auto;gap:20px;padding:6px 0;-webkit-overflow-scrolling:touch}.navlinks a{margin-left:0;white-space:nowrap;flex-shrink:0}.navlinks a.btn{display:none}}
